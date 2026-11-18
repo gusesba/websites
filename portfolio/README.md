@@ -1,4 +1,4 @@
-# Forma Studio
+# Gusesba
 
 Portfólio de landing pages de Gustavo Esmanhotto, feito em Next.js 16 com App Router, React 19 e CSS. A página apresenta as demos completas da BRAVIO Barbearia, do bréu café & tempo e da NÓR Detailing.
 

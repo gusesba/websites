@@ -1,10 +1,10 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Forma Studio — Landing pages fora do óbvio',
+  title: 'Gusesba — Landing pages fora do óbvio',
   description: 'Portfólio de Gustavo Esmanhotto. Explore três landing pages autorais e converse sobre a próxima página da sua marca.',
   openGraph: {
-    title: 'Forma Studio — Design & desenvolvimento',
+    title: 'Gusesba — Design & desenvolvimento',
     description: 'Landing pages autorais por Gustavo Esmanhotto.',
     type: 'website',
     locale: 'pt_BR',

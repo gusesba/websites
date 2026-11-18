@@ -18,12 +18,12 @@ export default function Header({ contact }) {
   }, [open]);
   return <header className="site-header">
     <div className="wrap header-inner">
-      <a href="#inicio" className="brand" aria-label="Forma Studio, início" onClick={() => setOpen(false)}><Mark /><span>forma<span className="brand-dot">.</span></span><small>STUDIO</small></a>
+      <a href="#inicio" className="brand" aria-label="Gusesba Studio, início" onClick={() => setOpen(false)}><Mark /><span>gusesba<span className="brand-dot">.</span></span><small>STUDIO</small></a>
       <nav id="navegacao" aria-label="Navegação principal" className={open ? 'navigation open' : 'navigation'}>
         {navigation.map(([text, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{text}</a>)}
       </nav>
       <div className="header-actions">
-        <a className="button contact-link" href={contact} target="_blank" rel="noreferrer">Vamos conversar <Arrow size={15} /></a>
+        <a className="button contact-link" href={contact} target="_blank" rel="noreferrer"><span className="contact-label"><span className="contact-prefix">Vamos </span>conversar</span><Arrow size={15} /></a>
         <button ref={toggle} className={'menu-toggle' + (open ? ' active' : '')} aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} aria-controls="navegacao" onClick={() => setOpen(!open)}><i /><i /></button>
       </div>
     </div>

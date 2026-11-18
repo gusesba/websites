@@ -4,7 +4,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import StudioBadge from '../components/StudioBadge';
 import { Mark, Arrow } from '../components/Icons';
 
-const contact = 'https://wa.me/5541997173484?text=' + encodeURIComponent('Olá, Gustavo! Vi o portfólio da Forma Studio e gostaria de um orçamento para uma landing page.');
+const contact = 'https://wa.me/5541997173484?text=' + encodeURIComponent('Olá, Gustavo! Vi o portfólio da Gusesba e gostaria de um orçamento para uma landing page.');
 const projects = [
   { slug: 'bravio', name: 'BRAVIO', signature: 'BARBEARIA', title: 'BRAVIO Barbearia', type: 'Barbearia', image: 'hero.jpg', description: 'Fotografia de perto, cortes autorais e um agendamento que começa pela escolha do serviço.' },
   { slug: 'breu', name: 'bréu', signature: 'CAFÉ & TEMPO', title: 'bréu café & tempo', type: 'Cafeteria', image: 'space.jpg', description: 'Um café de bairro traduzido em tons suaves, tipografia delicada e um cardápio para explorar.' },
@@ -60,13 +60,13 @@ export default function Home() {
       </div></section>
       <section className="studio section wrap" id="estudio" aria-labelledby="studio-title">
         <div className="studio-about">
-          <div data-reveal=""><p className="eyebrow"><i /> O ESTÚDIO</p><h2 id="studio-title">Por trás<br />da <em>forma.</em></h2></div>
-          <div className="studio-copy" data-reveal=""><p>Sou Gustavo Esmanhotto. Criei a Forma Studio para dar a cada negócio uma página com identidade própria.</p><p>Os três projetos deste portfólio são estudos autorais. Em cada um, explorei como fotografia, tipografia e movimento podem ajudar alguém a dar o próximo passo.</p><a href={contact} className="plain-link" target="_blank" rel="noreferrer">Converse comigo <Arrow size={15} /></a></div>
+          <div data-reveal=""><p className="eyebrow"><i /> O ESTÚDIO</p><h2 id="studio-title">Por trás<br />da <em>Gusesba.</em></h2></div>
+          <div className="studio-copy" data-reveal=""><p>Sou Gustavo Esmanhotto. Criei a Gusesba para dar a cada negócio uma página com identidade própria.</p><p>Os três projetos deste portfólio são estudos autorais. Em cada um, explorei como fotografia, tipografia e movimento podem ajudar alguém a dar o próximo passo.</p><a href={contact} className="plain-link" target="_blank" rel="noreferrer">Converse comigo <Arrow size={15} /></a></div>
         </div>
         <StudioBadge />
       </section>
       <section className="contact-section"><div className="wrap contact-inner"><div data-reveal=""><p className="eyebrow"><i /> SEU PROJETO</p><h2>Vamos dar forma<br />à sua <em>ideia?</em></h2></div><div className="contact-actions" data-reveal=""><a className="button primary" href={contact} target="_blank" rel="noreferrer">Pedir um orçamento <Arrow /></a><a className="email" href="mailto:gustavoesmanhotto@hotmail.com">gustavoesmanhotto@hotmail.com</a></div></div></section>
     </main>
-    <footer className="wrap footer" data-reveal=""><div className="footer-brand"><Mark />Forma Studio</div><span>© {new Date().getFullYear()} Gustavo Esmanhotto</span><a href="#inicio">Voltar ao topo <Arrow direction="up" size={14} /></a></footer>
+    <footer className="wrap footer" data-reveal=""><div className="footer-brand"><Mark />Gusesba</div><span>© {new Date().getFullYear()} Gustavo Esmanhotto</span><a href="#inicio">Voltar ao topo <Arrow direction="up" size={14} /></a></footer>
   </>;
 }
