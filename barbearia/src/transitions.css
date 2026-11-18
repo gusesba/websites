@@ -1,0 +1,52 @@
+/* Adapted from the modal, accordion and success-check recipes at transitions.dev.
+   Original recipes are kept in /transitions for attribution and tuning. */
+:root {
+  --modal-open-dur: 250ms;
+  --modal-close-dur: 150ms;
+  --modal-scale: .96;
+  --modal-scale-close: .96;
+  --modal-ease: cubic-bezier(.22,1,.36,1);
+  --acc-expand: 250ms;
+  --acc-collapse: 250ms;
+  --acc-chevron: 250ms;
+  --acc-ease: cubic-bezier(.22,1,.36,1);
+  --check-opacity-dur: 500ms;
+  --check-rotate-dur: 500ms;
+  --check-rotate-from: 80deg;
+  --check-bob-dur: 500ms;
+  --check-y-amount: 40px;
+  --check-blur-dur: 500ms;
+  --check-blur-from: 10px;
+  --check-path-dur: 500ms;
+  --check-path-delay: 80ms;
+  --check-ease-out: cubic-bezier(.22,1,.36,1);
+  --check-ease-opacity: cubic-bezier(.22,1,.36,1);
+  --check-ease-rotate: cubic-bezier(.22,1,.36,1);
+  --check-ease-bob: cubic-bezier(.34,1.35,.64,1);
+  --check-ease-path: cubic-bezier(.22,1,.36,1);
+}
+.t-modal { transform-origin:center;transform:scale(var(--modal-scale));opacity:0;pointer-events:none;transition:transform var(--modal-open-dur) var(--modal-ease),opacity var(--modal-open-dur) var(--modal-ease) }
+.t-modal.is-open { transform:scale(1);opacity:1;pointer-events:auto }
+.t-modal.is-closing { transform:scale(var(--modal-scale-close));opacity:0;pointer-events:none;transition:transform var(--modal-close-dur) var(--modal-ease),opacity var(--modal-close-dur) var(--modal-ease) }
+.t-acc-panel { display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--acc-collapse) var(--acc-ease) }
+.t-acc[data-open="true"] .t-acc-panel { grid-template-rows:1fr;transition:grid-template-rows var(--acc-expand) var(--acc-ease) }
+.t-acc-panel-inner { overflow:hidden;opacity:0;filter:blur(2px);transition:opacity var(--acc-collapse) var(--acc-ease),filter var(--acc-collapse) var(--acc-ease) }
+.t-acc[data-open="true"] .t-acc-panel-inner { opacity:1;filter:blur(0);transition:opacity var(--acc-expand) var(--acc-ease),filter var(--acc-expand) var(--acc-ease) }
+.t-acc-chevron { display:inline-flex;transform:scaleY(1);transform-origin:center;transition:transform var(--acc-chevron) var(--acc-ease) }
+.t-acc-chevron path { vector-effect:non-scaling-stroke }
+.t-acc[data-open="true"] .t-acc-chevron { transform:scaleY(-1) }
+.t-success-check { display:inline-block;transform-origin:center;opacity:0 }
+.t-success-check svg { display:block;overflow:visible }
+.t-success-check svg path { stroke-dasharray:20;stroke-dashoffset:20 }
+.t-success-check[data-state="in"] { animation:t-check-fade var(--check-opacity-dur) var(--check-ease-opacity) forwards,t-check-rotate var(--check-rotate-dur) var(--check-ease-rotate) forwards,t-check-blur var(--check-blur-dur) var(--check-ease-out) forwards,t-check-bob var(--check-bob-dur) var(--check-ease-bob) forwards }
+.t-success-check[data-state="in"] svg path { animation:t-check-draw var(--check-path-dur) var(--check-ease-path) var(--check-path-delay,0ms) forwards }
+@keyframes t-check-fade { from{opacity:0}to{opacity:1} }
+@keyframes t-check-rotate { from{transform:rotate(var(--check-rotate-from))}to{transform:rotate(0)} }
+@keyframes t-check-blur { from{filter:blur(var(--check-blur-from))}to{filter:blur(0)} }
+@keyframes t-check-bob { from{translate:0 var(--check-y-amount)}to{translate:0 0} }
+@keyframes t-check-draw { to{stroke-dashoffset:0} }
+@media(prefers-reduced-motion:reduce) {
+  .t-modal,.t-acc-panel,.t-acc-panel-inner,.t-acc-chevron{transition:none!important}
+  .t-success-check{animation:none!important;opacity:1}
+  .t-success-check svg path{animation:none!important;stroke-dashoffset:0!important}
+}

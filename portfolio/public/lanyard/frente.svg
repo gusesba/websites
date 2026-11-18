@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900">
+  <defs><pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#353431" stroke-width="1.5"/></pattern></defs>
+  <rect width="640" height="900" fill="#1a1a19"/>
+  <rect y="146" width="640" height="430" fill="url(#grid)"/>
+  <g fill="#ff693b" transform="translate(102 211) scale(11.6)">
+    <path d="M0 21 14 0h8L8 21zM7 29 26 0h8L15 29zM20 29l9-14h8l-9 14z"/>
+  </g>
+  <path d="M39 104h562M39 791h562" fill="none" stroke="#5f605b" stroke-width="2"/>
+  <g fill="#f4f2ed" font-family="Arial, sans-serif">
+    <text x="39" y="669" font-size="74" font-weight="bold" letter-spacing="-4">Gustavo</text>
+    <text x="39" y="746" font-size="74" font-weight="bold" letter-spacing="-4">Esmanhotto</text>
+  </g>
+  <text x="39" y="849" font-family="monospace" font-size="24" letter-spacing="2" fill="#efb79d">FORMA STUDIO</text>
+</svg>

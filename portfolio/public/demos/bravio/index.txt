@@ -1,0 +1,20 @@
+1:"$Sreact.fragment"
+2:I[9704,[],""]
+3:I[1854,[],""]
+5:"static/chunks/321-82e15130dcd56378.js"
+6:"static/chunks/app/page-c6596627c8a0ca54.js"
+7:I[474,["321","$5","974","$6"],"default"]
+8:I[8581,[],"OutletBoundary"]
+9:"$Sreact.suspense"
+b:"ViewportBoundary"
+c:I[8581,[],"$b"]
+e:"MetadataBoundary"
+f:I[8581,[],"$e"]
+11:I[4356,[],"default",1]
+:HL["/demos/bravio/_next/static/css/ffa2e7041037e7dc.css","style"]
+4:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","$L7",null,{}],null,["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],"p":false,"v":null}}]]
+0:{"P":null,"c":["",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/demos/bravio/_next/static/css/ffa2e7041037e7dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"pt-BR","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],"p":false,"v":null},"c":"$Q4"},"h":{"r":["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","$Lf",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$9",null,{"name":"Next.Metadata","children":"$L10"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$11",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"OVPRllBDMlAy7_BSjP-fc"}
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#181a18"}]]
+12:I[9936,[],"IconMark"]
+a:null
+10:[["$","title","0",{"children":"BRAVIO — Barbearia de Curitiba"}],["$","meta","1",{"name":"description","content":"BRAVIO. Corte com personalidade, barba no capricho e uma pausa na correria de Curitiba. Conheça este projeto conceitual de barbearia."}],["$","meta","2",{"property":"og:title","content":"BRAVIO — Seu estilo. Sem concessões."}],["$","meta","3",{"property":"og:description","content":"Barbearia de Curitiba. Um projeto conceitual de design e desenvolvimento web."}],["$","meta","4",{"property":"og:type","content":"website"}],["$","meta","5",{"name":"twitter:card","content":"summary"}],["$","meta","6",{"name":"twitter:title","content":"BRAVIO — Seu estilo. Sem concessões."}],["$","meta","7",{"name":"twitter:description","content":"Barbearia de Curitiba. Um projeto conceitual de design e desenvolvimento web."}],["$","link","8",{"rel":"icon","href":"/demos/bravio/favicon.svg"}],["$","$L12","9",{}]]

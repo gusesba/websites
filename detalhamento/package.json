@@ -1,0 +1,21 @@
+{
+  "name": "nor-auto-atelier",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 5173",
+    "build": "next build",
+    "preview": "serve out --listen tcp://127.0.0.1:5173"
+  },
+  "dependencies": {
+    "lucide-react": "^1.74.0",
+    "motion": "^14.14.0",
+    "next": "16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

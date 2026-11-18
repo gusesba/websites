@@ -1,0 +1,96 @@
+/* Adapted from transitions.dev: Modal, Accordion, Card hover tilt and Success check.
+   Sources and license: docs/credits.md. */
+:root {
+  --duration-quick: 150ms;
+  --duration-fast: 250ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --modal-open-dur: var(--duration-fast);
+  --modal-close-dur: var(--duration-quick);
+  --modal-scale: 0.96;
+  --modal-scale-close: 0.96;
+  --modal-ease: var(--ease-smooth-out);
+  --acc-expand: var(--duration-fast);
+  --acc-collapse: var(--duration-fast);
+  --acc-chevron: var(--duration-fast);
+  --acc-ease: var(--ease-smooth-out);
+  --tilt-perspective: 1000px;
+  --tilt-return: 1000ms;
+  --tilt-follow: 400ms;
+  --tilt-glare-opacity: 0.22;
+  --tilt-glare-fade: 300ms;
+  --check-opacity-dur: 500ms;
+  --check-rotate-dur: 500ms;
+  --check-rotate-from: 80deg;
+  --check-bob-dur: 500ms;
+  --check-y-amount: 30px;
+  --check-blur-dur: 500ms;
+  --check-blur-from: 8px;
+  --check-path-dur: 500ms;
+  --check-path-delay: 80ms;
+}
+.t-modal {
+  transform-origin: center;
+  transform: scale(var(--modal-scale));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--modal-open-dur) var(--modal-ease), opacity var(--modal-open-dur) var(--modal-ease);
+}
+.t-modal.is-open { transform: scale(1); opacity: 1; pointer-events: auto; }
+.t-modal.is-closing {
+  transform: scale(var(--modal-scale-close));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--modal-close-dur) var(--modal-ease), opacity var(--modal-close-dur) var(--modal-ease);
+}
+.t-acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--acc-collapse) var(--acc-ease);
+}
+.t-acc[data-open="true"] .t-acc-panel { grid-template-rows: 1fr; transition-duration: var(--acc-expand); }
+.t-acc-panel-inner { overflow: hidden; opacity: 0; filter: blur(2px); transition: opacity var(--acc-collapse) var(--acc-ease), filter var(--acc-collapse) var(--acc-ease); }
+.t-acc[data-open="true"] .t-acc-panel-inner { opacity: 1; filter: blur(0); transition-duration: var(--acc-expand); }
+.t-acc-chevron { display: inline-flex; transform: scaleY(1); transform-origin: center; transition: transform var(--acc-chevron) var(--acc-ease); }
+.t-acc-chevron path { vector-effect: non-scaling-stroke; }
+.t-acc[data-open="true"] .t-acc-chevron { transform: scaleY(-1); }
+.t-tilt { touch-action: pan-y; }
+.t-tilt-card {
+  position: relative;
+  border-radius: 13px;
+  transform: perspective(var(--tilt-perspective)) rotateX(var(--tilt-rx, 0deg)) rotateY(var(--tilt-ry, 0deg));
+  transform-style: preserve-3d;
+  transition: transform var(--tilt-return) var(--ease-smooth-out);
+}
+.t-tilt-card.is-tilting { transition: transform var(--tilt-follow) var(--ease-smooth-out); }
+.t-tilt-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  mix-blend-mode: screen;
+  background: radial-gradient(circle 180px at var(--tilt-gx, 50%) var(--tilt-gy, 50%), #f6db9d66, #f6db9d08 58%, transparent 85%);
+  transition: opacity var(--tilt-glare-fade) var(--ease-smooth-out);
+}
+.t-tilt.is-hover .t-tilt-glare { opacity: var(--tilt-glare-opacity); }
+.t-success-check { opacity: 0; transform-origin: center; }
+.t-success-check svg { display: block; overflow: visible; }
+.t-success-check svg path { stroke-dasharray: var(--check-length); stroke-dashoffset: var(--check-length); }
+.t-success-check[data-state="in"] {
+  animation: t-check-fade var(--check-opacity-dur) var(--ease-smooth-out) forwards,
+    t-check-rotate var(--check-rotate-dur) var(--ease-smooth-out) forwards,
+    t-check-blur var(--check-blur-dur) var(--ease-smooth-out) forwards,
+    t-check-bob var(--check-bob-dur) cubic-bezier(0.34, 1.35, 0.64, 1) forwards;
+}
+.t-success-check[data-state="in"] svg path { animation: t-check-draw var(--check-path-dur) var(--ease-smooth-out) var(--check-path-delay) forwards; }
+@keyframes t-check-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes t-check-rotate { from { transform: rotate(var(--check-rotate-from)); } to { transform: rotate(0deg); } }
+@keyframes t-check-blur { from { filter: blur(var(--check-blur-from)); } to { filter: blur(0); } }
+@keyframes t-check-bob { from { translate: 0 var(--check-y-amount); } to { translate: 0 0; } }
+@keyframes t-check-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .t-modal, .t-acc-panel, .t-acc-panel-inner, .t-acc-chevron { transition: none !important; }
+  .t-tilt-card { transform: none !important; transition: none !important; }
+  .t-success-check { animation: none !important; opacity: 1; }
+  .t-success-check svg path { animation: none !important; stroke-dashoffset: 0 !important; }
+}
